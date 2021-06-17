@@ -7,14 +7,14 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TecGroupSisVentasFrondEnd2021.Modelos;
 
+
 namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
-    public partial class Formulario_web2 : System.Web.UI.Page
+    public partial class ListadoProductos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-         
-                Producto p = new Producto();
+            Producto p = new Producto();
 
             //http://localhost:55159/ProductoRestServicio.svc
             var producto = new RestClient("http://localhost:55159");
@@ -24,8 +24,8 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             var lista = SimpleJson.DeserializeObject<IEnumerable<Producto>>(response.Content);
 
 
-            rpProductos.DataSource = lista;
-            rpProductos.DataBind();
+            dtProductos.DataSource = lista;
+            dtProductos.DataBind();
         }
     }
-}
+    }

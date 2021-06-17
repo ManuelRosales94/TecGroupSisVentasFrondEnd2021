@@ -117,9 +117,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Formularios\Formulario2.aspx" />
+    <Content Include="Formularios\ListadoProductos.aspx" />
+    <Content Include="Formularios\ListarProductos.aspx" />
     <Content Include="Formularios\Index.aspx" />
-    <Content Include="Formularios\PaginaPrincipal.aspx" />
     <Content Include="Formularios\RegistrarCliente.aspx" />
     <Content Include="Formularios\Productos\DetalleProductosVenta.aspx" />
     <Content Include="Formularios\Productos\ListarProductos.aspx" />
@@ -175,12 +175,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Formulario2.aspx.cs">
-      <DependentUpon>Formulario2.aspx</DependentUpon>
+    <Compile Include="Formularios\ListadoProductos.aspx.cs">
+      <DependentUpon>ListadoProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Formulario2.aspx.designer.cs">
-      <DependentUpon>Formulario2.aspx</DependentUpon>
+    <Compile Include="Formularios\ListadoProductos.aspx.designer.cs">
+      <DependentUpon>ListadoProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ListarProductos.aspx.cs">
+      <DependentUpon>ListarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\ListarProductos.aspx.designer.cs">
+      <DependentUpon>ListarProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -195,13 +202,6 @@
     </Compile>
     <Compile Include="Formularios\PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\PaginaPrincipal.aspx.cs">
-      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\PaginaPrincipal.aspx.designer.cs">
-      <DependentUpon>PaginaPrincipal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RegistrarCliente.aspx.cs">
       <DependentUpon>RegistrarCliente.aspx</DependentUpon>
@@ -266,8 +266,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Formularios\Clientes\" />
-    <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

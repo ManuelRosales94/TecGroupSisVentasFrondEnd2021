@@ -20,38 +20,7 @@
 
         </div>
 
-        <asp:Repeater ID="rpProductos" runat="server">
-
-    <HeaderTemplate>
-
-<table>
-    <thead>
-        <th>IdProducto</th>
-        <th>NombreProducto</th>
-        <th>Editar</th>
-        <th>Eliminar</th>
-    </thead>
-<tbody>
-
-    </HeaderTemplate>
-
-    <ItemTemplate>
-          <tr>
-              <td><%# Eval("IdProducto") %></td
-                  <td><%# Eval("NombreProducto")%></td
-              <td><a href="Formulario2.aspx?IdProducto=<%#Eval("IdProducto")%>">Editar</a></td>        
-              <td>Eliminar <%#Eval("IdProducto")%> </td>
-         </tr>
-    </ItemTemplate>
-
-    <FooterTemplate>
-  </tbody>
-    </table>
- 
-    </FooterTemplate>
-
-
-</asp:Repeater>
+       
 
     </form>
 </body>
