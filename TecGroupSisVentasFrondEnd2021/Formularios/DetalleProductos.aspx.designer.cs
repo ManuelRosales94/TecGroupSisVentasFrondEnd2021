@@ -11,16 +11,16 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
 
 
-    public partial class ListadoProductos
+    public partial class DetalleProductos
     {
 
         /// <summary>
-        /// Control dtProductos.
+        /// Control dtProductosDetalle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList dtProductos;
+        protected global::System.Web.UI.WebControls.DataList dtProductosDetalle;
     }
 }

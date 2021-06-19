@@ -88,16 +88,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServicioCliente\configuration91.svcinfo" />
-    <None Include="Connected Services\ServicioCliente\configuration.svcinfo" />
-    <None Include="Connected Services\ServicioCliente\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ServicioProducto\ProductoRestServicio.disco" />
     <None Include="Connected Services\ServicioProducto\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioProducto\configuration.svcinfo" />
     <None Include="Connected Services\ServicioProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Connected Services\ServicioUsuario\TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServicioUsuario\UsuarioRestServicio.disco" />
+    <None Include="Connected Services\ServicioUsuario\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioUsuario\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioUsuario\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -117,10 +121,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Formularios\ListadoProductos.aspx" />
-    <Content Include="Formularios\ListarProductos.aspx" />
+    <Content Include="Formularios\DetalleProductos.aspx" />
     <Content Include="Formularios\Index.aspx" />
-    <Content Include="Formularios\RegistrarCliente.aspx" />
+    <Content Include="Formularios\IniciarSesion.aspx" />
+    <Content Include="Formularios\RegistrarUsuario.aspx" />
     <Content Include="Formularios\Productos\DetalleProductosVenta.aspx" />
     <Content Include="Formularios\Productos\ListarProductos.aspx" />
     <Content Include="Global.asax" />
@@ -130,19 +134,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Connected Services\ServicioCliente\ClienteRestServicio.wsdl" />
-    <None Include="Connected Services\ServicioCliente\ClienteRestServicio.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServicioCliente\ClienteRestServicio1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServicioCliente\ClienteRestServicio2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <Content Include="Connected Services\ServicioCliente\TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\ServicioProducto\ProductoRestServicio.wsdl" />
     <None Include="Connected Services\ServicioProducto\ProductoRestServicio.xsd">
       <SubType>Designer</SubType>
@@ -157,6 +148,16 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Formularios\PaginaMaestra.Master" />
+    <None Include="Connected Services\ServicioUsuario\UsuarioRestServicio.wsdl" />
+    <None Include="Connected Services\ServicioUsuario\UsuarioRestServicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioUsuario\UsuarioRestServicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioUsuario\UsuarioRestServicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -165,29 +166,22 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ServicioCliente\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\ServicioProducto\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\ListadoProductos.aspx.cs">
-      <DependentUpon>ListadoProductos.aspx</DependentUpon>
+    <Compile Include="Connected Services\ServicioUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\DetalleProductos.aspx.cs">
+      <DependentUpon>DetalleProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\ListadoProductos.aspx.designer.cs">
-      <DependentUpon>ListadoProductos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\ListarProductos.aspx.cs">
-      <DependentUpon>ListarProductos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\ListarProductos.aspx.designer.cs">
-      <DependentUpon>ListarProductos.aspx</DependentUpon>
+    <Compile Include="Formularios\DetalleProductos.aspx.designer.cs">
+      <DependentUpon>DetalleProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -196,6 +190,13 @@
     <Compile Include="Formularios\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\IniciarSesion.aspx.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\IniciarSesion.aspx.designer.cs">
+      <DependentUpon>IniciarSesion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -203,12 +204,12 @@
     <Compile Include="Formularios\PaginaMaestra.Master.designer.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\RegistrarCliente.aspx.cs">
-      <DependentUpon>RegistrarCliente.aspx</DependentUpon>
+    <Compile Include="Formularios\RegistrarUsuario.aspx.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\RegistrarCliente.aspx.designer.cs">
-      <DependentUpon>RegistrarCliente.aspx</DependentUpon>
+    <Compile Include="Formularios\RegistrarUsuario.aspx.designer.cs">
+      <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Productos\DetalleProductosVenta.aspx.cs">
       <DependentUpon>DetalleProductosVenta.aspx</DependentUpon>
@@ -227,7 +228,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Modelos\Cliente.cs" />
+    <Compile Include="Modelos\Usuario.cs" />
     <Compile Include="Modelos\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -271,8 +272,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServicioCliente\" />
     <WCFMetadataStorage Include="Connected Services\ServicioProducto\" />
+    <WCFMetadataStorage Include="Connected Services\ServicioUsuario\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

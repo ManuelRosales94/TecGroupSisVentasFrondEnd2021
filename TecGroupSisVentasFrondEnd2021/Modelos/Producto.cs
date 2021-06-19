@@ -34,5 +34,7 @@ namespace TecGroupSisVentasFrondEnd2021.Modelos
         public DateTime? FechaRegistro { get; set; }
 
         public int EstadoProducto { get; set; }
+
+        public string Comentarios { get; set; }
     }
 }

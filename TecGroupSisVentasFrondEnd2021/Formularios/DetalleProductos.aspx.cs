@@ -7,10 +7,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TecGroupSisVentasFrondEnd2021.Modelos;
 
-
 namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
-    public partial class ListadoProductos : System.Web.UI.Page
+    public partial class DetalleProductos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,8 +23,8 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             var lista = SimpleJson.DeserializeObject<IEnumerable<Producto>>(response.Content);
 
 
-            dtProductos.DataSource = lista;
-            dtProductos.DataBind();
+            dtProductosDetalle.DataSource = lista;
+            dtProductosDetalle.DataBind();
         }
     }
-    }
+}

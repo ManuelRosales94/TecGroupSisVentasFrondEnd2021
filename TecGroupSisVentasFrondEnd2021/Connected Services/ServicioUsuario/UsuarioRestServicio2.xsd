@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:55159/ClienteRestServicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" />
+  <xs:import schemaLocation="http://localhost:55159/UsuarioRestServicio.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" />
   <xs:element name="ObtenerporId">
     <xs:complexType>
       <xs:sequence>
@@ -11,7 +11,7 @@
   <xs:element name="ObtenerporIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="ObtenerporIdResult" nillable="true" type="q1:Cliente" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="ObtenerporIdResult" nillable="true" type="q1:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,14 +23,14 @@
   <xs:element name="ListadoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="ListadoResult" nillable="true" type="q2:ArrayOfCliente" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="ListadoResult" nillable="true" type="q2:ArrayOfUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="Insertar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="cliente" nillable="true" type="q3:Cliente" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="Usuario" nillable="true" type="q3:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -58,7 +58,7 @@
   <xs:element name="Actualizar">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="cliente" nillable="true" type="q4:Cliente" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="Usuario" nillable="true" type="q4:Usuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -93,7 +93,7 @@
   <xs:element name="ObtenerporNombreResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="ObtenerporNombreResult" nillable="true" type="q5:ArrayOfCliente" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades" minOccurs="0" name="ObtenerporNombreResult" nillable="true" type="q5:ArrayOfUsuario" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

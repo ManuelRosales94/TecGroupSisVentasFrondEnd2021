@@ -11,7 +11,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
 
 
-    public partial class Registrar_Cliente
+    public partial class Registrar_Usuario
     {
 
         /// <summary>

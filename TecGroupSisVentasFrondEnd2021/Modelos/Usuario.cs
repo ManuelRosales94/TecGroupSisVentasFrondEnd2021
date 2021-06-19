@@ -8,7 +8,7 @@ namespace TecGroupSisVentasFrondEnd2021.Models
     public class Cliente
 
     { 
-        public int IdCliente { get; set; }
+        public int IdUsuario { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Celular { get; set; }
@@ -21,5 +21,8 @@ namespace TecGroupSisVentasFrondEnd2021.Models
         public decimal? Saldo { get; set; }
         public DateTime? FechaRegistro { get; set; }
         public int? EstadoCliente { get; set; }
-    }
+        public string TipoUsuario { get; set; }
+        public DateTime? UltimaConexion { get; set; }
+    
+}
 }

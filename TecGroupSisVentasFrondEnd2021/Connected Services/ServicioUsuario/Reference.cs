@@ -8,16 +8,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
+namespace TecGroupSisVentasFrondEnd2021.ServicioUsuario {
     using System.Runtime.Serialization;
     using System;
     
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Cliente", Namespace="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://schemas.datacontract.org/2004/07/TecGroup.Dominio.Entidades")]
     [System.SerializableAttribute()]
-    public partial class Cliente : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class Usuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
@@ -47,7 +47,7 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
         private System.Nullable<System.DateTime> FechaRegistroField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdClienteField;
+        private int IdUsuarioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NomDistritoField;
@@ -57,6 +57,12 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> SaldoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TipoUsuarioField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> UltimaConexionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> idDistritoField;
@@ -176,14 +182,14 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int IdCliente {
+        public int IdUsuario {
             get {
-                return this.IdClienteField;
+                return this.IdUsuarioField;
             }
             set {
-                if ((this.IdClienteField.Equals(value) != true)) {
-                    this.IdClienteField = value;
-                    this.RaisePropertyChanged("IdCliente");
+                if ((this.IdUsuarioField.Equals(value) != true)) {
+                    this.IdUsuarioField = value;
+                    this.RaisePropertyChanged("IdUsuario");
                 }
             }
         }
@@ -228,6 +234,32 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TipoUsuario {
+            get {
+                return this.TipoUsuarioField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TipoUsuarioField, value) != true)) {
+                    this.TipoUsuarioField = value;
+                    this.RaisePropertyChanged("TipoUsuario");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> UltimaConexion {
+            get {
+                return this.UltimaConexionField;
+            }
+            set {
+                if ((this.UltimaConexionField.Equals(value) != true)) {
+                    this.UltimaConexionField = value;
+                    this.RaisePropertyChanged("UltimaConexion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> idDistrito {
             get {
                 return this.idDistritoField;
@@ -251,101 +283,101 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioCliente.IClienteRestServicio")]
-    public interface IClienteRestServicio {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServicioUsuario.IUsuarioRestServicio")]
+    public interface IUsuarioRestServicio {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/ObtenerporId", ReplyAction="http://tempuri.org/IClienteRestServicio/ObtenerporIdResponse")]
-        TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente ObtenerporId(string id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/ObtenerporId", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ObtenerporIdResponse")]
+        TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario ObtenerporId(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/ObtenerporId", ReplyAction="http://tempuri.org/IClienteRestServicio/ObtenerporIdResponse")]
-        System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente> ObtenerporIdAsync(string id);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/ObtenerporId", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ObtenerporIdResponse")]
+        System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario> ObtenerporIdAsync(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Listado", ReplyAction="http://tempuri.org/IClienteRestServicio/ListadoResponse")]
-        TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[] Listado();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Listado", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ListadoResponse")]
+        TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[] Listado();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Listado", ReplyAction="http://tempuri.org/IClienteRestServicio/ListadoResponse")]
-        System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[]> ListadoAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Listado", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ListadoResponse")]
+        System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[]> ListadoAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Insertar", ReplyAction="http://tempuri.org/IClienteRestServicio/InsertarResponse")]
-        int Insertar(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Insertar", ReplyAction="http://tempuri.org/IUsuarioRestServicio/InsertarResponse")]
+        int Insertar(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Insertar", ReplyAction="http://tempuri.org/IClienteRestServicio/InsertarResponse")]
-        System.Threading.Tasks.Task<int> InsertarAsync(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Insertar", ReplyAction="http://tempuri.org/IUsuarioRestServicio/InsertarResponse")]
+        System.Threading.Tasks.Task<int> InsertarAsync(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Eliminar", ReplyAction="http://tempuri.org/IClienteRestServicio/EliminarResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Eliminar", ReplyAction="http://tempuri.org/IUsuarioRestServicio/EliminarResponse")]
         int Eliminar(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Eliminar", ReplyAction="http://tempuri.org/IClienteRestServicio/EliminarResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Eliminar", ReplyAction="http://tempuri.org/IUsuarioRestServicio/EliminarResponse")]
         System.Threading.Tasks.Task<int> EliminarAsync(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Actualizar", ReplyAction="http://tempuri.org/IClienteRestServicio/ActualizarResponse")]
-        int Actualizar(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Actualizar", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ActualizarResponse")]
+        int Actualizar(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Actualizar", ReplyAction="http://tempuri.org/IClienteRestServicio/ActualizarResponse")]
-        System.Threading.Tasks.Task<int> ActualizarAsync(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Actualizar", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ActualizarResponse")]
+        System.Threading.Tasks.Task<int> ActualizarAsync(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Anular", ReplyAction="http://tempuri.org/IClienteRestServicio/AnularResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Anular", ReplyAction="http://tempuri.org/IUsuarioRestServicio/AnularResponse")]
         int Anular(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/Anular", ReplyAction="http://tempuri.org/IClienteRestServicio/AnularResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/Anular", ReplyAction="http://tempuri.org/IUsuarioRestServicio/AnularResponse")]
         System.Threading.Tasks.Task<int> AnularAsync(string id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/ObtenerporNombre", ReplyAction="http://tempuri.org/IClienteRestServicio/ObtenerporNombreResponse")]
-        TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[] ObtenerporNombre(string nombre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/ObtenerporNombre", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ObtenerporNombreResponse")]
+        TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[] ObtenerporNombre(string nombre);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClienteRestServicio/ObtenerporNombre", ReplyAction="http://tempuri.org/IClienteRestServicio/ObtenerporNombreResponse")]
-        System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[]> ObtenerporNombreAsync(string nombre);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsuarioRestServicio/ObtenerporNombre", ReplyAction="http://tempuri.org/IUsuarioRestServicio/ObtenerporNombreResponse")]
+        System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[]> ObtenerporNombreAsync(string nombre);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IClienteRestServicioChannel : TecGroupSisVentasFrondEnd2021.ServicioCliente.IClienteRestServicio, System.ServiceModel.IClientChannel {
+    public interface IUsuarioRestServicioChannel : TecGroupSisVentasFrondEnd2021.ServicioUsuario.IUsuarioRestServicio, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ClienteRestServicioClient : System.ServiceModel.ClientBase<TecGroupSisVentasFrondEnd2021.ServicioCliente.IClienteRestServicio>, TecGroupSisVentasFrondEnd2021.ServicioCliente.IClienteRestServicio {
+    public partial class UsuarioRestServicioClient : System.ServiceModel.ClientBase<TecGroupSisVentasFrondEnd2021.ServicioUsuario.IUsuarioRestServicio>, TecGroupSisVentasFrondEnd2021.ServicioUsuario.IUsuarioRestServicio {
         
-        public ClienteRestServicioClient() {
+        public UsuarioRestServicioClient() {
         }
         
-        public ClienteRestServicioClient(string endpointConfigurationName) : 
+        public UsuarioRestServicioClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public ClienteRestServicioClient(string endpointConfigurationName, string remoteAddress) : 
+        public UsuarioRestServicioClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ClienteRestServicioClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UsuarioRestServicioClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public ClienteRestServicioClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public UsuarioRestServicioClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente ObtenerporId(string id) {
+        public TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario ObtenerporId(string id) {
             return base.Channel.ObtenerporId(id);
         }
         
-        public System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente> ObtenerporIdAsync(string id) {
+        public System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario> ObtenerporIdAsync(string id) {
             return base.Channel.ObtenerporIdAsync(id);
         }
         
-        public TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[] Listado() {
+        public TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[] Listado() {
             return base.Channel.Listado();
         }
         
-        public System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[]> ListadoAsync() {
+        public System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[]> ListadoAsync() {
             return base.Channel.ListadoAsync();
         }
         
-        public int Insertar(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente) {
-            return base.Channel.Insertar(cliente);
+        public int Insertar(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario) {
+            return base.Channel.Insertar(Usuario);
         }
         
-        public System.Threading.Tasks.Task<int> InsertarAsync(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente) {
-            return base.Channel.InsertarAsync(cliente);
+        public System.Threading.Tasks.Task<int> InsertarAsync(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario) {
+            return base.Channel.InsertarAsync(Usuario);
         }
         
         public int Eliminar(string id) {
@@ -356,12 +388,12 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
             return base.Channel.EliminarAsync(id);
         }
         
-        public int Actualizar(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente) {
-            return base.Channel.Actualizar(cliente);
+        public int Actualizar(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario) {
+            return base.Channel.Actualizar(Usuario);
         }
         
-        public System.Threading.Tasks.Task<int> ActualizarAsync(TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente cliente) {
-            return base.Channel.ActualizarAsync(cliente);
+        public System.Threading.Tasks.Task<int> ActualizarAsync(TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario Usuario) {
+            return base.Channel.ActualizarAsync(Usuario);
         }
         
         public int Anular(string id) {
@@ -372,11 +404,11 @@ namespace TecGroupSisVentasFrondEnd2021.ServicioCliente {
             return base.Channel.AnularAsync(id);
         }
         
-        public TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[] ObtenerporNombre(string nombre) {
+        public TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[] ObtenerporNombre(string nombre) {
             return base.Channel.ObtenerporNombre(nombre);
         }
         
-        public System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioCliente.Cliente[]> ObtenerporNombreAsync(string nombre) {
+        public System.Threading.Tasks.Task<TecGroupSisVentasFrondEnd2021.ServicioUsuario.Usuario[]> ObtenerporNombreAsync(string nombre) {
             return base.Channel.ObtenerporNombreAsync(nombre);
         }
     }
