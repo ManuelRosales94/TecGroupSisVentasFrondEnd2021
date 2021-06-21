@@ -121,12 +121,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Formularios\AgregarProductos.aspx" />
+    <Content Include="Formularios\CarritoCompra.aspx" />
     <Content Include="Formularios\DetalleProductos.aspx" />
     <Content Include="Formularios\Index.aspx" />
     <Content Include="Formularios\IniciarSesion.aspx" />
+    <Content Include="Formularios\Login.aspx" />
+    <Content Include="Formularios\MantenimientoProducto.aspx" />
     <Content Include="Formularios\RegistrarUsuario.aspx" />
-    <Content Include="Formularios\Productos\DetalleProductosVenta.aspx" />
-    <Content Include="Formularios\Productos\ListarProductos.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -176,6 +178,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\AgregarProductos.aspx.cs">
+      <DependentUpon>AgregarProductos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\AgregarProductos.aspx.designer.cs">
+      <DependentUpon>AgregarProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\CarritoCompra.aspx.cs">
+      <DependentUpon>CarritoCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\CarritoCompra.aspx.designer.cs">
+      <DependentUpon>CarritoCompra.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\DetalleProductos.aspx.cs">
       <DependentUpon>DetalleProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -197,6 +213,20 @@
     <Compile Include="Formularios\IniciarSesion.aspx.designer.cs">
       <DependentUpon>IniciarSesion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\MantenimientoProducto.aspx.cs">
+      <DependentUpon>MantenimientoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\MantenimientoProducto.aspx.designer.cs">
+      <DependentUpon>MantenimientoProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\PaginaMaestra.Master.cs">
       <DependentUpon>PaginaMaestra.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,20 +240,6 @@
     </Compile>
     <Compile Include="Formularios\RegistrarUsuario.aspx.designer.cs">
       <DependentUpon>RegistrarUsuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Productos\DetalleProductosVenta.aspx.cs">
-      <DependentUpon>DetalleProductosVenta.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\Productos\DetalleProductosVenta.aspx.designer.cs">
-      <DependentUpon>DetalleProductosVenta.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Productos\ListarProductos.aspx.cs">
-      <DependentUpon>ListarProductos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\Productos\ListarProductos.aspx.designer.cs">
-      <DependentUpon>ListarProductos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,9 +281,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

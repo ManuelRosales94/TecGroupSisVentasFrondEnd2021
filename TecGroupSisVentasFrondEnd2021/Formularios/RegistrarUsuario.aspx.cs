@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TecGroupSisVentasFrondEnd2021.Models;
 using RestSharp;
-using TecGroupSisVentasFrondEnd2021.ServicioUsuario;
+
 
 namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
@@ -18,7 +18,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Usuario c = new Usuario();
+           Usuario c = new Usuario();
             c.Nombre = txtNombre.Text;
             c.Apellidos = txtApellidos.Text;
             c.Celular = txtCelular.Text;

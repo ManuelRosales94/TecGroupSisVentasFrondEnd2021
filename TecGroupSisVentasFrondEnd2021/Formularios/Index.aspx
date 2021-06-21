@@ -6,7 +6,8 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <asp:LoginName ID="LoginName1" runat="server" />
+    <asp:LoginStatus ID="LoginStatus1" runat="server" />
     <div class="container col-md-11">
 
         <div class="row" id="row">
@@ -17,8 +18,12 @@
                     <img src="../../dist/Imagenes/banner2.jpg" alt="">
                 </div>
                 <br />
-
-                <asp:DataList ID="dtProductos1" runat="server" DataKeyField="IdProducto" RepeatColumns="4" CssClass="table table-responsive">
+                <td>
+                            <h3>Lista de Productos</h>                                                       
+                           
+                                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                        </td>
+                <asp:DataList ID="dtProductos1" runat="server" DataKeyField="IdProducto" RepeatColumns="4" CssClass="table table-responsive" OnItemCommand="dtProductos1_ItemCommand" >
 
                     <ItemTemplate>
              
@@ -43,8 +48,9 @@
                   <asp:Label ID="Label2" runat="server" Text='<%# Eval("PrecioVenta") %>'></asp:Label>
                         <br />
                         <br />
-                        <asp:Button ID="Button2" runat="server" Text="Agregar al Carrito" CssClass="btn btn-success" />
+                        <asp:Button ID="Button2" runat="server" CommandName="Seleccionar" Text ="Agregar al Carrito" CssClass="btn btn-success" />
                         <br />
+                        
                     </ItemTemplate>
                 </asp:DataList>
             </div>

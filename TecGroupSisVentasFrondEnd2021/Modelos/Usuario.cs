@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TecGroupSisVentasFrondEnd2021.Models
 {
-    public class Cliente
+    public class Usuario
 
     { 
         public int IdUsuario { get; set; }

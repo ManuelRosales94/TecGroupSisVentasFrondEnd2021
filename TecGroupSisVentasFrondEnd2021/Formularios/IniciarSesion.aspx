@@ -14,6 +14,7 @@
 
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
+
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="card card-outline card-primary">
@@ -64,7 +65,7 @@
         <a href="#">Olvidé mi contraseña</a>
       </p>
       <p class="mb-0">
-        <a href="/Formularios/RegistrarCliente.aspx" class="text-center">Registrar Usuario</a>
+        <a href="/Formularios/RegistrarUsuario.aspx" class="text-center">Registrar Usuario</a>
       </p>
     </div>
 

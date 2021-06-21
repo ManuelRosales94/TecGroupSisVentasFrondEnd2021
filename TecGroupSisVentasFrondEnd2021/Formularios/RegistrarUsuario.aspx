@@ -118,10 +118,11 @@
               registro correcto
 
           </div>
+
       </form>
 
 
-      <a  href="/Formularios/IniciarSesion.aspx" class="signup">Iniciar Sesion</a>
+      <a  href="/Formularios/Login.aspx" class="signup">Iniciar Sesion</a>
     </div>
   </div>
 </div>
