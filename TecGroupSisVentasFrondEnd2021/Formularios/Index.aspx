@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:LoginName ID="LoginName1" runat="server" />
-    <asp:LoginStatus ID="LoginStatus1" runat="server" />
+    <asp:LoginStatus ID="LoginStatus1" runat="server" LoginText="Iniciar Sesion" />
     <div class="container col-md-11">
 
         <div class="row" id="row">
@@ -19,10 +19,12 @@
                 </div>
                 <br />
                 <td>
-                            <h3>Lista de Productos</h>                                                       
+                            <h3>Lista de Productos</h3>                                                       
                            
-                                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                       <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+                    <asp:Label ID="txtUsuario" runat="server" Text=""></asp:Label>
                         </td>
+
                 <asp:DataList ID="dtProductos1" runat="server" DataKeyField="IdProducto" RepeatColumns="4" CssClass="table table-responsive" OnItemCommand="dtProductos1_ItemCommand" >
 
                     <ItemTemplate>
@@ -34,10 +36,10 @@
                          <a href="DetalleProductos.aspx?IdProducto="<%# Eval("IdProducto") %>" >Detalle </a>
                          <br />
                         <asp:Label ID="Label1" runat="server" Text='<%# Eval("NombreProducto") %>'></asp:Label>
-                        <br />
+                        <%--<br />
                         Detalle:
                         <asp:Label ID="Label4" runat="server"  href='DetalleProductos.aspx?IdProducto="<%# Eval("IdProducto") %>'>Editar</asp:Label>
-                     <br />
+                     <br />--%>
 
                        
 
@@ -48,7 +50,7 @@
                   <asp:Label ID="Label2" runat="server" Text='<%# Eval("PrecioVenta") %>'></asp:Label>
                         <br />
                         <br />
-                        <asp:Button ID="Button2" runat="server" CommandName="Seleccionar" Text ="Agregar al Carrito" CssClass="btn btn-success" />
+                        <asp:Button ID="txtAgregar" runat="server" CommandName="Seleccionar" Text ="Agregar al Carrito" CssClass="btn btn-success" />
                         <br />
                         
                     </ItemTemplate>

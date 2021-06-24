@@ -17,7 +17,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
         DataTable dtb;
         DataTable carrito = new DataTable();
 
-
+      
 
         public void CargarDetalle()
         {
@@ -51,10 +51,14 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!Page.User.Identity.IsAuthenticated)
-            {
-                FormsAuthentication.RedirectToLoginPage();
-            }
+            var userFromCache = Cache["user"];
+            
+
+
+            //if (!Page.User.Identity.IsAuthenticated)
+            //{
+            //    FormsAuthentication.RedirectToLoginPage();
+            //}
             Producto p = new Producto();
 
             //http://localhost:55159/ProductoRestServicio.svc
@@ -64,6 +68,8 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             var response = producto.Execute(request);
             var lista = SimpleJson.DeserializeObject<IEnumerable<Producto>>(response.Content);
 
+            Session["Catalogo"] = lista;
+            CarritoCompra carritoCompra = (CarritoCompra)Session["carrito"];
 
             dtProductos1.DataSource = lista;
             dtProductos1.DataBind();

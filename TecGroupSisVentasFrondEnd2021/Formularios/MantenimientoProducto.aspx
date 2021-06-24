@@ -26,7 +26,7 @@
                 <thead>
                     <tr>
                         <th>Nombre</th>
-                        <th>s/ Precio</th>
+                        <th>S/ Precio</th>
                         <th>Stock</th>
                         <th>Categoria</th>
                         <th>Editar</th>

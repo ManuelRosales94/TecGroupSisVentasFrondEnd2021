@@ -47,7 +47,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             p.Destacado = 1;
             p.UnidadMedida = "UNIDAD";
             p.IdCategoria = 1;
-            p.Categoria = "";
+            p.Categoria = "Computo";
             p.Stock = Convert.ToInt32(txtStock.Text);
 
 
@@ -127,7 +127,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             p.Foto = txtFoto.Text;
             p.Destacado = 1;
             p.UnidadMedida = "UNIDAD";
-            p.Categoria = "JJJJJJJ";
+            p.Categoria = "Computo";
             p.Stock = Convert.ToInt32(txtStock.Text);
             p.IdCategoria = Convert.ToInt32(referId.Text);
             p.EstadoProducto = 1;
