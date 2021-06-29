@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TecGroupSisVentasFrondEnd2021.Modelos;
 
 namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
@@ -11,6 +12,12 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            var user = (Usuario)Session["user"];
+            if (user == null)
+            {        
+                Response.Redirect("/Formularios/IniciarSesion.aspx?IdError=1");
+            }
 
         }
 

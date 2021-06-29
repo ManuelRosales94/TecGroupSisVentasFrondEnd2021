@@ -1,6 +1,71 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formularios/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="DetalleProductos.aspx.cs" Inherits="TecGroupSisVentasFrondEnd2021.Formularios.DetalleProductos" %>
+﻿<%@ Page Title="" 
+    Language="C#" 
+    MasterPageFile="~/Formularios/PaginaMaestra.Master" 
+    AutoEventWireup="true"
+    CodeBehind="DetalleProductos.aspx.cs"
+    Inherits="TecGroupSisVentasFrondEnd2021.Formularios.DetalleProductos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+
+    <asp:FormView ID="productDetail" runat="server"
+        ItemType="TecGroupSisVentasFrondEnd2021.Modelos.Producto" SelectMethod="productDetail_GetItem" RenderOuterTable="false">
+
+        <ItemTemplate>
+             <div>
+                <h1><%#:Item.NombreProducto %></h1>
+            </div>
+            <br />
+            <table>
+                <tr>
+                    <td>
+                        <img src="/Catalog/Images/Thumbs/<%#:Item.Foto %>" 
+                           style="border:solid; height:300px" alt="<%#:Item.NombreProducto %>"/>
+                    </td>
+                    <td>&nbsp;</td>  
+                    <td style="vertical-align: top; text-align:left;">
+                        <b>Description:</b><br /><%#:Item.DescProducto %>
+                        <br />
+                        <span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.PrecioVenta) %></span>
+                        <br />
+                        <span><b>Product Number:</b>&nbsp;<%#:Item.IdProducto %></span>
+                        <br />
+                    </td>
+                </tr>
+            </table>
+        </ItemTemplate>
+
+
+    </asp:FormView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <asp:DataList ID="dtProductosDetalle" runat="server" CssClass="table table-responsive">
         <ItemTemplate>

@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head runat="server">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Log in (v2)</title>
@@ -24,9 +24,12 @@
     <div class="card-body">
       <p class="login-box-msg">Regístrese para iniciar su sesión</p>
 
-      <form action="../../index3.html" method="post">
+      <form runat="server">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Correo">
+
+
+            <asp:TextBox ID="txtUsuario" runat="server" type="text" class="form-control" placeholder="Correo"></asp:TextBox>
+
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -34,7 +37,8 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Contraseña">
+
+            <asp:TextBox ID="txtPass" runat="server" type="password" class="form-control" placeholder="Contraseña"></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -46,24 +50,24 @@
           
           </div>
           <!-- /.col -->
-          <div class="col-4">
-            <button  type="submit" class="btn btn-primary btn-block">Iniciar Sesión</button>
-             <div>
- <a href="/Formularios/Index.aspx" class="text-center">Menu Principal</a>
+          
+            
+            <div class="col-5">
 
-
-             </div>
+              <asp:Button ID="Button1" runat="server" Text="Iniciar" type="submit" class="btn btn-primary btn-block"  OnClick="Button1_Click" />
+             
            
+                   <div>
+              <asp:Label ID="Label1" runat="server" Text=""  ForeColor="Red" Font-Bold="true"></asp:Label>
 
+         
+           
+</div>
           </div>
           <!-- /.col -->
         </div>
       </form>
-
-
-      <p class="mb-1">
-        <a href="#">Olvidé mi contraseña</a>
-      </p>
+ 
       <p class="mb-0">
         <a href="/Formularios/RegistrarUsuario.aspx" class="text-center">Registrar Usuario</a>
       </p>

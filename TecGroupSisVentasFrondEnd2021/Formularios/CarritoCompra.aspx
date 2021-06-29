@@ -13,12 +13,14 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="width: 77px">&nbsp;</td>
-                        <td style="width: 397px">
-                            <asp:TextBox ID="txtCodigo" runat="server" Visible="true"></asp:TextBox>
+                        <td style="width: 77px">Cliente :</td>
+                        <td style="width: 397px; margin-bottom: 4px; margin-top: 4px">
+                            <asp:TextBox ID="TextBox3" runat="server" Width="332px" CssClass="form-control"></asp:TextBox>
                         </td>
                         <td>&nbsp;</td>
                     </tr>
+                    
+
                     <tr>
                         <td style="width: 77px">
                             <strong>Fecha :</strong></td>

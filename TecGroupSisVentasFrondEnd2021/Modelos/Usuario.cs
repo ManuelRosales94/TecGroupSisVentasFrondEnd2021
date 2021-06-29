@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace TecGroupSisVentasFrondEnd2021.Models
+namespace TecGroupSisVentasFrondEnd2021.Modelos
 {
     public class Usuario
 
