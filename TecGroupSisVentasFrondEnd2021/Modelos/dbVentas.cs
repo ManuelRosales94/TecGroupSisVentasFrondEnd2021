@@ -14,6 +14,7 @@ namespace TecGroupSisVentasFrondEnd2021.Modelos
         }
 
         public  DbSet<CartItem> ShoppingCartItems { get; set; }
+       
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

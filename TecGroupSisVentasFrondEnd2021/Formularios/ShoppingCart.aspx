@@ -70,6 +70,8 @@
     </div>
      <br />
     <table> 
-   
+        
     </table>
+    <asp:Button ID="btnPedido" runat="server" Text="Button"  OnClick="btnPedido_Click" />
+
 </asp:Content>

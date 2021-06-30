@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestSharp;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
@@ -12,22 +13,23 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
     public partial class ShoppingCart : System.Web.UI.Page
     {
+        private dbVentas _db = new dbVentas();
         protected void Page_Load(object sender, EventArgs e)
         {
 
 
-         
 
-                var user = (Usuario)Session["user"];
-                if (user == null)
-                {
-                    Response.Redirect("/Formularios/IniciarSesion.aspx?IdError=1");
-                }
 
-                txtCliente.Text = user.Nombre + " " + user.Apellidos;
+            var user = (Usuario)Session["user"];
+            if (user == null)
+            {
+                Response.Redirect("/Formularios/IniciarSesion.aspx?IdError=1");
+            }
+
+            txtCliente.Text = user.Nombre + " " + user.Apellidos;
             Label1.Text = DateTime.Now.ToLongDateString();
 
-                using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
             {
                 decimal cartTotal = 0;
                 cartTotal = usersShoppingCart.GetTotal();
@@ -98,5 +100,121 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             UpdateCartItems();
         }
 
+        protected  void btnPedido_Click(object sender, EventArgs e)
+        {
+            var user = (Usuario)Session["user"];
+            txtCliente.Text = user.Nombre + " " + user.Apellidos;
+
+            int registroGenerado = 0; 
+            Logic.PedidoCabeceraL oVentasCab = new Logic.PedidoCabeceraL();
+            Modelos.PedidoCabecera oVentasModelo = new Modelos.PedidoCabecera();
+
+            oVentasModelo.IdUsuario = user.IdUsuario;
+            oVentasModelo.NombreCli = user.Nombre;
+            oVentasModelo.IdCupon = 1;
+            oVentasModelo.SubTotal = 1;
+            oVentasModelo.IGV = 1;
+            oVentasModelo.SubTotal2 = 0;
+            oVentasModelo.Descuentos =0;
+            oVentasModelo.Total =120;
+            oVentasModelo.MonEnvio = 0;
+            oVentasModelo.TotalmasEnvio = 0;
+            oVentasModelo.TipoPago = "Pendiente";
+            oVentasModelo.TipoPedido = "Recojo Tienda";
+            oVentasModelo.EstadoPedido = "Pendiete";
+            
+            oVentasCab.Insertar(oVentasModelo);
+          
+            registroGenerado = PedidoCabeceraL.ID();
+
+            
+
+            var cartItems = _db.ShoppingCartItems;
+
+            foreach (var item in cartItems)
+            {
+                Logic.PedidoDetalleL oVentasDet = new Logic.PedidoDetalleL();
+                Modelos.PedidoDetalle oVentasModeloDet = new Modelos.PedidoDetalle();
+
+
+                oVentasModeloDet.IdPedidoCab = registroGenerado;
+                oVentasModeloDet.IdProducto = item.ProductId;
+                oVentasModeloDet.NombreProd = item.Producto.DescProducto;
+                oVentasModeloDet.IdCupon = 0;
+                oVentasModeloDet.Cantidad = item.Quantity;
+                oVentasModeloDet.PrecioUnidad = item.Producto.PrecioVenta;
+                oVentasModeloDet.PrecioDescuento = 0;
+                oVentasModeloDet.Total = item.Producto.PrecioVenta* item.Quantity;
+                oVentasDet.Insertar(oVentasModeloDet);
+
+            }
+        }
     }
+
 }
+
+
+//var user = (Usuario)Session["user"];
+
+//txtCliente.Text = user.Nombre + " " + user.Apellidos;
+
+//PedidoCabecera p = new PedidoCabecera();
+
+//p.IdUsuario = 1;
+//p.NombreCli = user.Nombre;
+//p.IdCupon = 1;
+//p.SubTotal = 1;
+//p.IGV = 1;
+//p.SubTotal2 = 1;
+//p.Descuentos = 1;
+//p.Total = 23;
+//p.MonEnvio = 1;
+//p.TotalmasEnvio = 1;
+//p.TipoPago = "dd";
+//p.TipoPedido = "dd";
+//p.EstadoPedido = "dd",
+//    detalle:[
+
+
+
+
+
+//var cartItems = _db.ShoppingCartItems;
+////foreach (var item in p.detalle)
+// foreach (var item in cartItems)
+
+//{
+//    CartItems detalle2 = new CartItems();
+//    detalle2.ProductId = 6;
+//    //detalle2.IdProducto = 3;
+//    //detalle2.NombreProd = "";
+//    //detalle2.IdCupon = 1;
+//    //detalle2.Cantidad = 1;
+//    //detalle2.PrecioUnidad = 1;
+//    //detalle2.PrecioDescuento = 1;
+//    //detalle2.Total = 1;
+
+//    //}
+
+//    PedidoDetalle detalle = new PedidoDetalle>();
+
+//    PedidoCabecera p = new PedidoCabecera()
+//    {
+//        IdUsuario = 1,
+//        NombreCli = "yerson",
+//        detalle.Cantidad=2,
+
+
+//};
+
+
+
+
+
+////http://localhost:55159/ProductoRestServicio.svc
+//var producto = new RestClient("http://localhost:55159");
+//var request = new RestRequest("/PedidoRestServicio.svc/Rest/Pedido", Method.POST);
+//request.AddJsonBody(p);
+
+
+//var response = producto.Execute(request);

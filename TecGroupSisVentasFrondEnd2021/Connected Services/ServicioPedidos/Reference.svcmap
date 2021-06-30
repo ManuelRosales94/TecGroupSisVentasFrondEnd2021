@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6d7e8eca-6a50-4f36-aefb-0f1afd1ba2e8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55159/PedidoRestServicio.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PedidoRestServicio.disco" MetadataType="Disco" ID="227c08c3-c389-4895-bbc6-2d00643da02f" SourceId="1" SourceUrl="http://localhost:55159/PedidoRestServicio.svc?disco" />
+    <MetadataFile FileName="PedidoRestServicio.xsd" MetadataType="Schema" ID="64d76018-2b57-42c8-917c-54315e8156b7" SourceId="1" SourceUrl="http://localhost:55159/PedidoRestServicio.svc?xsd=xsd1" />
+    <MetadataFile FileName="PedidoRestServicio1.xsd" MetadataType="Schema" ID="c45552b0-ad34-4962-a6c2-a007d79ffda6" SourceId="1" SourceUrl="http://localhost:55159/PedidoRestServicio.svc?xsd=xsd2" />
+    <MetadataFile FileName="PedidoRestServicio2.xsd" MetadataType="Schema" ID="50d590d5-bbc4-49f5-8fc4-db7fa7422135" SourceId="1" SourceUrl="http://localhost:55159/PedidoRestServicio.svc?xsd=xsd0" />
+    <MetadataFile FileName="PedidoRestServicio.wsdl" MetadataType="Wsdl" ID="f2dd2d30-5a46-4347-90d3-9dbb165d14ee" SourceId="1" SourceUrl="http://localhost:55159/PedidoRestServicio.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -103,10 +103,30 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ServicioPedidos\PedidoRestServicio.wsdl" />
+    <None Include="Connected Services\ServicioPedidos\PedidoRestServicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioPedidos\PedidoRestServicio1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServicioPedidos\PedidoRestServicio2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ServicioPedidos\TecGroupSisVentasFrondEnd2021.ServicioPedidos.PedidoCabecera.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServicioProducto\ProductoRestServicio.disco" />
     <None Include="Connected Services\ServicioProducto\configuration91.svcinfo" />
     <None Include="Connected Services\ServicioProducto\configuration.svcinfo" />
     <None Include="Connected Services\ServicioProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServicioPedidos\PedidoRestServicio.disco" />
+    <None Include="Connected Services\ServicioPedidos\configuration91.svcinfo" />
+    <None Include="Connected Services\ServicioPedidos\configuration.svcinfo" />
+    <None Include="Connected Services\ServicioPedidos\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -187,6 +207,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ServicioPedidos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Logic\BDConexion.cs" />
+    <Compile Include="Logic\PedidoCabeceraL.cs" />
+    <Compile Include="Logic\PedidoDetalleL.cs" />
     <Compile Include="Modelos\CartItems.cs" />
     <Compile Include="Connected Services\ServicioProducto\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -283,6 +311,8 @@
     <Compile Include="Modelos\CarritoCompras.cs" />
     <Compile Include="Modelos\CartItem.cs" />
     <Compile Include="Modelos\Category.cs" />
+    <Compile Include="Modelos\PedidoCabecera.cs" />
+    <Compile Include="Modelos\PedidoDetalle.cs" />
     <Compile Include="Modelos\ProductContext.cs" />
     <Compile Include="Modelos\ProductDatabaseInitializer.cs" />
     <Compile Include="Modelos\Usuario.cs" />
@@ -329,8 +359,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServicioPedidos\" />
     <WCFMetadataStorage Include="Connected Services\ServicioProducto\" />
     <WCFMetadataStorage Include="Connected Services\ServicioUsuario\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
