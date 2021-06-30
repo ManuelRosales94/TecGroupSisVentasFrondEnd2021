@@ -34,7 +34,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Total">          
                 <ItemTemplate>
-                    <%#: String.Format("{0:c}", ((Convert.ToDouble(Item.Quantity)) *  Convert.ToDouble(Item.Producto.PrecioVenta)))%>
+                    <%#: String.Format("{0:c}", ((Convert.ToDecimal(Item.Quantity)) *  Convert.ToDecimal(Item.Producto.PrecioVenta)))%>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField>
@@ -50,7 +50,7 @@
 
          <tr>
       <td>
-          <asp:Button ID="UpdateBtn" runat="server" Text="Actualizar" OnClick="UpdateBtn_Click"/>
+          <asp:Button ID="UpdateBtn" runat="server" Text="Actualizar" OnClick="UpdateBtn_Click" class="btn btn-success" />
           </td>
       <td>
           <br />
@@ -61,17 +61,20 @@
             <asp:Label  ID="LabelTotalText" runat="server" Text="Sub Total:"  ></asp:Label>
             <asp:Label ID="lblTotal" runat="server" EnableViewState="false" ></asp:Label>
              <br />
-            <asp:Label ID="txtIgv" runat="server" Text="Igv:"></asp:Label>
+            <br />
+           <%-- <asp:Label ID="txtIgv" runat="server" Text="Igv:"></asp:Label>
             <asp:Label ID="IGV" runat="server" EnableViewState="false"></asp:Label>
               <br />
             <asp:Label ID="txtPagoTotal" runat="server" Text="Total:"></asp:Label>
-            <asp:Label ID="PagoTotal" runat="server" EnableViewState="false"></asp:Label>
+            <asp:Label ID="PagoTotal" runat="server" EnableViewState="false"></asp:Label>--%>
          </strong> 
     </div>
      <br />
     <table> 
         
     </table>
-    <asp:Button ID="btnPedido" runat="server" Text="Button"  OnClick="btnPedido_Click" />
+    <asp:Button ID="btnPedido" runat="server" Text="Registrar"  OnClick="btnPedido_Click" CssClass="btn btn-primary" />
 
 </asp:Content>
+
+                                 

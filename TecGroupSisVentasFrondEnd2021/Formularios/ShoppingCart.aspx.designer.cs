@@ -78,42 +78,6 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
         protected global::System.Web.UI.WebControls.Label lblTotal;
 
         /// <summary>
-        /// txtIgv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtIgv;
-
-        /// <summary>
-        /// IGV control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IGV;
-
-        /// <summary>
-        /// txtPagoTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtPagoTotal;
-
-        /// <summary>
-        /// PagoTotal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PagoTotal;
-
-        /// <summary>
         /// btnPedido control.
         /// </summary>
         /// <remarks>

@@ -102,8 +102,15 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 
         protected  void btnPedido_Click(object sender, EventArgs e)
         {
-            var user = (Usuario)Session["user"];
-            txtCliente.Text = user.Nombre + " " + user.Apellidos;
+            using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+            {
+                decimal cartTotal = 0;
+                cartTotal = usersShoppingCart.GetTotal();
+
+              
+                var user = (Usuario)Session["user"];
+                txtCliente.Text = user.Nombre + " " + user.Apellidos;
+            
 
             int registroGenerado = 0; 
             Logic.PedidoCabeceraL oVentasCab = new Logic.PedidoCabeceraL();
@@ -112,11 +119,12 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             oVentasModelo.IdUsuario = user.IdUsuario;
             oVentasModelo.NombreCli = user.Nombre;
             oVentasModelo.IdCupon = 1;
-            oVentasModelo.SubTotal = 1;
-            oVentasModelo.IGV = 1;
+         
             oVentasModelo.SubTotal2 = 0;
             oVentasModelo.Descuentos =0;
-            oVentasModelo.Total =120;
+            oVentasModelo.Total = cartTotal;
+            oVentasModelo.SubTotal =0;
+            oVentasModelo.IGV = 0;
             oVentasModelo.MonEnvio = 0;
             oVentasModelo.TotalmasEnvio = 0;
             oVentasModelo.TipoPago = "Pendiente";
@@ -139,20 +147,22 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 
                 oVentasModeloDet.IdPedidoCab = registroGenerado;
                 oVentasModeloDet.IdProducto = item.ProductId;
-                oVentasModeloDet.NombreProd = item.Producto.DescProducto;
+                oVentasModeloDet.NombreProd = item.Producto.NombreProducto;
                 oVentasModeloDet.IdCupon = 0;
                 oVentasModeloDet.Cantidad = item.Quantity;
                 oVentasModeloDet.PrecioUnidad = item.Producto.PrecioVenta;
                 oVentasModeloDet.PrecioDescuento = 0;
                 oVentasModeloDet.Total = item.Producto.PrecioVenta* item.Quantity;
+                oVentasModeloDet.ItemId = item.ItemId;
                 oVentasDet.Insertar(oVentasModeloDet);
 
-            }
+                    Response.Redirect("/Formularios/ListaCompras.aspx");
+                }
         }
     }
 
 }
-
+}
 
 //var user = (Usuario)Session["user"];
 

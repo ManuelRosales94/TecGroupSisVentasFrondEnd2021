@@ -23,8 +23,10 @@
                 <br />
                 
                 <div id="bannerProducto" class="responsive-banner">
-                    <img src="../../dist/Imagenes/banner2.jpg" alt="">
+                    <img src="../../dist/Imagenes/banner2.jpg" alt
+                         <img src="../../dist/Imagenes/banner2.jpg" alt="">
                 </div>
+
                 <br />
                  <tr>
                         <td>

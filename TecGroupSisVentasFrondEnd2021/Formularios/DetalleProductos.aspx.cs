@@ -15,24 +15,25 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //var user = (Usuario)Session["user"];
-            //if (user == null)
-            //{
-            //    Response.Redirect("/Formularios/IniciarSesion.aspx?IdError=1");
-            //}
+            var user = (Usuario)Session["user"];
+            if (user == null)
+            {
+                Response.Redirect("/Formularios/IniciarSesion.aspx?IdError=1");
+            }
 
-            Producto p = new Producto();
+        //    Producto p = new Producto();
 
-            //http://localhost:55159/ProductoRestServicio.svc
-            var producto = new RestClient("http://localhost:55159");
-            var request = new RestRequest("/ProductoRestServicio.svc/Rest/Producto", Method.GET);
+        //    //http://localhost:55159/ProductoRestServicio.svc
+        //    var producto = new RestClient("http://localhost:55159");
+        //    var request = new RestRequest("/ProductoRestServicio.svc/Rest/Producto", Method.GET);
 
-            var response = producto.Execute(request);
-            var lista = SimpleJson.DeserializeObject<IEnumerable<Producto>>(response.Content);
+        //    var response = producto.Execute(request);
+        //    var lista = SimpleJson.DeserializeObject<IEnumerable<Producto>>(response.Content);
 
 
-            dtProductosDetalle.DataSource = lista;
-            dtProductosDetalle.DataBind();
+        //    dtProductosDetalle.DataSource = lista;
+        //    dtProductosDetalle.DataBind();
+        //
         }
 
         

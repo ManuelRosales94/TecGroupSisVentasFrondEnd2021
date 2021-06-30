@@ -163,6 +163,7 @@
     <Content Include="Formularios\DetalleProductos.aspx" />
     <Content Include="Formularios\Index.aspx" />
     <Content Include="Formularios\IniciarSesion.aspx" />
+    <Content Include="Formularios\ListaCompras.aspx" />
     <Content Include="Formularios\MantenimientoProducto.aspx" />
     <Content Include="Formularios\RegistrarUsuario.aspx" />
     <Content Include="Formularios\ShoppingCart.aspx" />
@@ -211,6 +212,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ListaCompras.aspx.cs">
+      <DependentUpon>ListaCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\ListaCompras.aspx.designer.cs">
+      <DependentUpon>ListaCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logic\BDConexion.cs" />
     <Compile Include="Logic\PedidoCabeceraL.cs" />
