@@ -153,12 +153,13 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
                 oVentasModeloDet.PrecioUnidad = item.Producto.PrecioVenta;
                 oVentasModeloDet.PrecioDescuento = 0;
                 oVentasModeloDet.Total = item.Producto.PrecioVenta* item.Quantity;
-                oVentasModeloDet.ItemId = item.ItemId;
+        
                 oVentasDet.Insertar(oVentasModeloDet);
 
-                    Response.Redirect("/Formularios/ListaCompras.aspx");
+                   
                 }
-        }
+                Response.Redirect("/Formularios/ListaCompras.aspx");
+            }
     }
 
 }

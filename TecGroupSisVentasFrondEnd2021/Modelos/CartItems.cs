@@ -6,7 +6,7 @@ namespace TecGroupSisVentasFrondEnd2021
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class CartItems
+    public  class CartItems
     {
         [Key]
         public string ItemId { get; set; }

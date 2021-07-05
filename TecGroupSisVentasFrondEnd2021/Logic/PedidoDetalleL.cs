@@ -34,7 +34,7 @@ namespace TecGroupSisVentasFrondEnd2021.Logic
                     cmdDetalleVentas.Parameters.AddWithValue("@PrecioUnidad", item.PrecioUnidad);
                     cmdDetalleVentas.Parameters.AddWithValue("@PrecioDescuento", item.PrecioDescuento);
                     cmdDetalleVentas.Parameters.AddWithValue("@Total", item.Total);
-                    cmdDetalleVentas.Parameters.AddWithValue("@ItemId", item.ItemId);
+        
                    
 
                 }
