@@ -60,6 +60,42 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
         protected global::System.Web.UI.WebControls.Button UpdateBtn;
 
         /// <summary>
+        /// txtPagoTotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtPagoTotal;
+
+        /// <summary>
+        /// Subtotal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Subtotal;
+
+        /// <summary>
+        /// txtIgv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtIgv;
+
+        /// <summary>
+        /// IGV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label IGV;
+
+        /// <summary>
         /// LabelTotalText control.
         /// </summary>
         /// <remarks>

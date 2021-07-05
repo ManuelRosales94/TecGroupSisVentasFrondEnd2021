@@ -12,52 +12,63 @@
         ItemType="TecGroupSisVentasFrondEnd2021.Modelos.Producto" SelectMethod="productDetail_GetItem" RenderOuterTable="false">
 
         <ItemTemplate>
-             <div>
-                <h1><%#:Item.NombreProducto %></h1>
-            </div>
-            <br />
+             
             <table>
                 <tr>
                     <td>
                         <img src="/Catalog/Images/Thumbs/<%#:Item.Foto %>" 
-                           style="border:solid; height:300px" alt="<%#:Item.NombreProducto %>"/>
+                           style="Width:500px; height:600px"  alt="<%#:Item.NombreProducto %>"/>
                     </td>
                     <td>&nbsp;</td>  
                     <td style="vertical-align: top; text-align:left;">
-                        <b>Description:</b><br /><%#:Item.DescProducto %>
+                        <h3 class="my-3">
+                        <b>Description:</b><br /><%#:Item.NombreProducto %>
+                             </h3>
+                    
+
+                        <b>Características destacadas:</b><br /><%#:Item.DescProducto %>
                         <br />
-                        <span><b>Price:</b>&nbsp;<%#: String.Format("{0:c}", Item.PrecioVenta) %></span>
+                        <h3 class="my-3">
+                        <b>Stock:</b><br /><%#:Item.Stock %>
+                             </h3>
+                         <h3 class="my-3">
+                        <span><b>Precio:</b><br />&nbsp;<%#: String.Format("{0:c}", Item.PrecioVenta) %></span>
+                              </h3>
+                   
+
+                        <b>Mas Información:</b><br />
+                        <asp:Label ID="Label7" runat="server" Text='-Precio incluye el IGV'></asp:Label>
                         <br />
-                        <span><b>Product Number:</b>&nbsp;<%#:Item.IdProducto %></span>
+                        <asp:Label ID="Label6" runat="server" Text='- Precio sujeto a cambios sin previo aviso.'></asp:Label>
                         <br />
+                        <asp:Label ID="Label8" runat="server" Text='-Precio no incluye flete por envío, consultar precios de delivery por Distrito'></asp:Label>
+                        <br />
+                        </div>
+                         <br />
+                         <div class="btn btn-primary btn-lg btn-flat">
+                            <i class="fas fa-cart-plus fa-lg mr-2"></i>Agregar al Carrito   
+                        <asp:Button ID="Button1" runat="server" class="btn btn-primary" />
+                        </div>
                     </td>
+
+                   
                 </tr>
             </table>
+            <div class="row mt-4">
+                <nav class="w-100">
+                    <div class="nav nav-tabs" id="product-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Comentarios</a>
+                    </div>
+                </nav>
+                <div class="tab-content p-3" id="nav-tabContent">
+
+                    <asp:Label ID="Label4" runat="server" Text='<%# Eval("Comentarios") %>'></asp:Label>
+
+                </div>
         </ItemTemplate>
 
 
     </asp:FormView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

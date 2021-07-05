@@ -122,6 +122,8 @@ namespace TecGroupSisVentasFrondEnd2021.Logic
                                cartItems.Producto.PrecioVenta).Sum();
             return total ?? decimal.Zero;
         }
+     
+        
 
         public ShoppingCartActions GetCart(HttpContext context)
         {
@@ -231,6 +233,8 @@ namespace TecGroupSisVentasFrondEnd2021.Logic
             
             return count ?? 0;
         }
+
+        
 
         public struct ShoppingCartUpdates
         {

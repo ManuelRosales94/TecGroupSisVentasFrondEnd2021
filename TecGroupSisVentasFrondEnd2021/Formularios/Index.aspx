@@ -77,6 +77,11 @@
                                         <span><%#:Item.NombreProducto%> 
                                         </span>
                                     </a>
+
+                                   <br />
+                                        <b>Stock: </b<span><%#:Item.Stock%> 
+                                        </span>
+                                    </a>
                                     <br />
                                     <span>
                                         <b>Precio: </b><%#:String.Format("{0:c}", Item.PrecioVenta)%> 

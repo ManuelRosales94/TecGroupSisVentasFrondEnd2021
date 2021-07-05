@@ -27,16 +27,32 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
             }
 
             txtCliente.Text = user.Nombre + " " + user.Apellidos;
+
+            montos();
+        }
+        public void montos()
+        {
+
             Label1.Text = DateTime.Now.ToLongDateString();
 
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
             {
+
                 decimal cartTotal = 0;
+                double cartTotal2 = 0;
+                double igv = 0;
+                double subtotal = 0;
                 cartTotal = usersShoppingCart.GetTotal();
                 if (cartTotal > 0)
                 {
                     // Display Total.
-                    lblTotal.Text = String.Format("{0:c}", cartTotal);
+                    cartTotal2 = Convert.ToDouble(cartTotal);
+                    lblTotal.Text = cartTotal2.ToString("0.00");
+                    igv = cartTotal2 * 0.18;
+                    // Subtotal.Text = String.Format("{ 0:c}", subtotal);
+                    subtotal = cartTotal2 - igv;
+                    IGV.Text = igv.ToString("0.00");
+                    Subtotal.Text = subtotal.ToString("0.00");
                 }
                 else
                 {
@@ -47,7 +63,10 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
                     // CheckoutImageBtn.Visible = false;
                 }
             }
+
         }
+
+
         public List<CartItem> GetShoppingCartItems()
         {
             ShoppingCartActions actions = new ShoppingCartActions();
@@ -97,72 +116,76 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 
         protected void UpdateBtn_Click(object sender, EventArgs e)
         {
+            
             UpdateCartItems();
+            montos();
         }
 
-        protected  void btnPedido_Click(object sender, EventArgs e)
+        protected void btnPedido_Click(object sender, EventArgs e)
         {
             using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
             {
                 decimal cartTotal = 0;
                 cartTotal = usersShoppingCart.GetTotal();
 
-              
+
                 var user = (Usuario)Session["user"];
                 txtCliente.Text = user.Nombre + " " + user.Apellidos;
-            
-
-            int registroGenerado = 0; 
-            Logic.PedidoCabeceraL oVentasCab = new Logic.PedidoCabeceraL();
-            Modelos.PedidoCabecera oVentasModelo = new Modelos.PedidoCabecera();
-
-            oVentasModelo.IdUsuario = user.IdUsuario;
-            oVentasModelo.NombreCli = user.Nombre;
-            oVentasModelo.IdCupon = 1;
-         
-            oVentasModelo.SubTotal2 = 0;
-            oVentasModelo.Descuentos =0;
-            oVentasModelo.Total = cartTotal;
-            oVentasModelo.SubTotal =0;
-            oVentasModelo.IGV = 0;
-            oVentasModelo.MonEnvio = 0;
-            oVentasModelo.TotalmasEnvio = 0;
-            oVentasModelo.TipoPago = "Pendiente";
-            oVentasModelo.TipoPedido = "Recojo Tienda";
-            oVentasModelo.EstadoPedido = "Pendiete";
-            
-            oVentasCab.Insertar(oVentasModelo);
-          
-            registroGenerado = PedidoCabeceraL.ID();
-
-            
-
-            var cartItems = _db.ShoppingCartItems;
-
-            foreach (var item in cartItems)
-            {
-                Logic.PedidoDetalleL oVentasDet = new Logic.PedidoDetalleL();
-                Modelos.PedidoDetalle oVentasModeloDet = new Modelos.PedidoDetalle();
 
 
-                oVentasModeloDet.IdPedidoCab = registroGenerado;
-                oVentasModeloDet.IdProducto = item.ProductId;
-                oVentasModeloDet.NombreProd = item.Producto.NombreProducto;
-                oVentasModeloDet.IdCupon = 0;
-                oVentasModeloDet.Cantidad = item.Quantity;
-                oVentasModeloDet.PrecioUnidad = item.Producto.PrecioVenta;
-                oVentasModeloDet.PrecioDescuento = 0;
-                oVentasModeloDet.Total = item.Producto.PrecioVenta* item.Quantity;
-        
-                oVentasDet.Insertar(oVentasModeloDet);
+                int registroGenerado = 0;
+                Logic.PedidoCabeceraL oVentasCab = new Logic.PedidoCabeceraL();
+                Modelos.PedidoCabecera oVentasModelo = new Modelos.PedidoCabecera();
+
+
+
+
+                oVentasModelo.IdUsuario = user.IdUsuario;
+                oVentasModelo.NombreCli = user.Nombre;
+                oVentasModelo.IdCupon = 1;
+                oVentasModelo.SubTotal2 = 0;
+                oVentasModelo.Descuentos = 0;
+                oVentasModelo.Total = cartTotal;
+                oVentasModelo.SubTotal = Convert.ToDecimal(Subtotal.Text);
+                oVentasModelo.IGV = Convert.ToDecimal(IGV.Text);
+                oVentasModelo.MonEnvio = 0;
+                oVentasModelo.TotalmasEnvio = 0;
+                oVentasModelo.TipoPago = "Pendiente";
+                oVentasModelo.TipoPedido = "Recojo Tienda";
+                oVentasModelo.EstadoPedido = "Pendiente";
+
+                oVentasCab.Insertar(oVentasModelo);
+
+                registroGenerado = PedidoCabeceraL.ID();
+
+
+
+                var cartItems = _db.ShoppingCartItems;
+
+                foreach (var item in cartItems)
+                {
+                    Logic.PedidoDetalleL oVentasDet = new Logic.PedidoDetalleL();
+                    Modelos.PedidoDetalle oVentasModeloDet = new Modelos.PedidoDetalle();
+
+
+                    oVentasModeloDet.IdPedidoCab = registroGenerado;
+                    oVentasModeloDet.IdProducto = item.ProductId;
+                    oVentasModeloDet.NombreProd = item.Producto.NombreProducto;
+                    oVentasModeloDet.IdCupon = 0;
+                    oVentasModeloDet.Cantidad = item.Quantity;
+                    oVentasModeloDet.PrecioUnidad = item.Producto.PrecioVenta;
+                    oVentasModeloDet.PrecioDescuento = 0;
+                    oVentasModeloDet.Total = item.Producto.PrecioVenta * item.Quantity;
+                    oVentasModeloDet.CartId = item.CartId;
+                    oVentasDet.Insertar(oVentasModeloDet);
 
                    
                 }
                 Response.Redirect("/Formularios/ListaCompras.aspx");
             }
-    }
+        }
 
-}
+    }
 }
 
 //var user = (Usuario)Session["user"];

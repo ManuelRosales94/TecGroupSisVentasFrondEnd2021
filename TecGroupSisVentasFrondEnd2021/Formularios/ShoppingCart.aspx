@@ -29,16 +29,23 @@
                 <asp:BoundField DataField="Producto.PrecioVenta" HeaderText="Precio" DataFormatString="{0:c}"/>     
             <asp:TemplateField HeaderText="Cantidad">   
                 <ItemTemplate>
-                    <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" Text="<%#: Item.Quantity %>"></asp:TextBox>
+                    <asp:TextBox ID="PurchaseQuantity" Width="40" runat="server" type="number" min="1"  Text="<%#: Item.Quantity %>"></asp:TextBox>
                 </ItemTemplate>
             </asp:TemplateField>
+
+         <asp:TemplateField HeaderText="Stock">   
+                <ItemTemplate>
+                    <asp:TextBox ID="PurchaseQuantity2" Width="50" runat="server"   Text="<%#: Item.Producto.Stock %>"></asp:TextBox>
+                </ItemTemplate>
+            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Total">          
                 <ItemTemplate>
                     <%#: String.Format("{0:c}", ((Convert.ToDecimal(Item.Quantity)) *  Convert.ToDecimal(Item.Producto.PrecioVenta)))%>
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField>
-                <ItemTemplate>
+            <asp:TemplateField  HeaderText="Eliminar"> 
+                <ItemTemplate>      
                     <asp:CheckBox id="Remove" runat="server" Text=""  ></asp:CheckBox>
                   
                 </ItemTemplate>
@@ -58,15 +65,22 @@
     </tr>
         <strong>
       
-            <asp:Label  ID="LabelTotalText" runat="server" Text="Sub Total:"  ></asp:Label>
-            <asp:Label ID="lblTotal" runat="server" EnableViewState="false" ></asp:Label>
+                  <asp:Label ID="txtPagoTotal" runat="server" Text="Sub Total:"></asp:Label>
+            <asp:Label ID="Subtotal" runat="server" EnableViewState="false"></asp:Label>
+            
              <br />
-            <br />
-           <%-- <asp:Label ID="txtIgv" runat="server" Text="Igv:"></asp:Label>
+           
+            <asp:Label ID="txtIgv" runat="server" Text="Igv:"></asp:Label>
             <asp:Label ID="IGV" runat="server" EnableViewState="false"></asp:Label>
+
+    
               <br />
-            <asp:Label ID="txtPagoTotal" runat="server" Text="Total:"></asp:Label>
-            <asp:Label ID="PagoTotal" runat="server" EnableViewState="false"></asp:Label>--%>
+         
+
+
+            <asp:Label   ID="LabelTotalText" runat="server" Text=" Total:"  ></asp:Label>
+            <asp:Label ID="lblTotal" runat="server" EnableViewState="false" ></asp:Label>
+
          </strong> 
     </div>
      <br />
