@@ -28,7 +28,7 @@
         <div class="input-group mb-3">
 
 
-            <asp:TextBox ID="txtUsuario" runat="server" type="text" class="form-control" placeholder="Correo"></asp:TextBox>
+            <asp:TextBox ID="txtUsuario" runat="server" type="text" class="form-control" placeholder="DNI"></asp:TextBox>
 
           <div class="input-group-append">
             <div class="input-group-text">

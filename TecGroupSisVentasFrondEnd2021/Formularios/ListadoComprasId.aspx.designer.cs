@@ -11,7 +11,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 {
 
 
-    public partial class ListaCompras
+    public partial class ListadoComprasId
     {
 
         /// <summary>
@@ -24,21 +24,21 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// compra control.
+        /// compraID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox compra;
+        protected global::System.Web.UI.WebControls.ListBox compraID;
 
         /// <summary>
-        /// rptCompras control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptCompras;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

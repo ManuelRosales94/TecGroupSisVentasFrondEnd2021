@@ -168,6 +168,7 @@
     <Content Include="Formularios\Index.aspx" />
     <Content Include="Formularios\IniciarSesion.aspx" />
     <Content Include="Formularios\ListaCompras.aspx" />
+    <Content Include="Formularios\ListadoComprasId.aspx" />
     <Content Include="Formularios\MantenimientoProducto.aspx" />
     <Content Include="Formularios\RegistrarUsuario.aspx" />
     <Content Include="Formularios\ShoppingCart.aspx" />
@@ -223,6 +224,13 @@
     </Compile>
     <Compile Include="Formularios\ListaCompras.aspx.designer.cs">
       <DependentUpon>ListaCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ListadoComprasId.aspx.cs">
+      <DependentUpon>ListadoComprasId.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\ListadoComprasId.aspx.designer.cs">
+      <DependentUpon>ListadoComprasId.aspx</DependentUpon>
     </Compile>
     <Compile Include="Logic\BDConexion.cs" />
     <Compile Include="Logic\PedidoCabeceraL.cs" />

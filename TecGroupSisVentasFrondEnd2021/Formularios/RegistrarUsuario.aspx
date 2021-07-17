@@ -131,14 +131,14 @@
         </div>
 
           <div class="alert alert-success" runat="server" role ="alert" id="msg" visible="false">
-              registro correcto
+              Registro Correcto
 
           </div>
 
       </form>
 
 
-      <a  href="/Formularios/IniciarSesion.aspx" class="signup">Iniciar Sesion</a>
+      <a  href="/Formularios/IniciarSesion.aspx" class="signup">Iniciar Sesión</a>
     </div>
   </div>
 </div>

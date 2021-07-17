@@ -1,15 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formularios/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="ListaCompras.aspx.cs" Inherits="TecGroupSisVentasFrondEnd2021.Formularios.ListaCompras" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Formularios/PaginaMaestra.Master" AutoEventWireup="true" CodeBehind="ListadoComprasId.aspx.cs" Inherits="TecGroupSisVentasFrondEnd2021.Formularios.ListadoComprasId" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<asp:Label ID="Label1" runat="server" Text="Gracias por tu Preferencia"></asp:Label>
+    <asp:Label ID="Label1" runat="server" Text="Lista de Pedidos"></asp:Label>
+    <asp:ListBox ID="compraID" runat="server" selectionMode="Multiple" AutoPostBack="True" OnSelectedIndexChanged="ListBox1_SelectedIndexChanged" Visible="false" ></asp:ListBox>
 
+<br />
 
-
-        <asp:ListBox ID="compra" runat="server" SelectionMode="Multiple" AutoPostBack="true" OnSelectedIndexChanged="compra_SelectedIndexChanged" Visible="false"   ></asp:ListBox>
-     <br />
-    <asp:Repeater ID="rptCompras" runat="server" OnItemCommand="rptCompras_ItemCommand" >
-    
+    <asp:Repeater ID="Repeater1" runat="server" OnItemCommand="Repeater1_ItemCommand" >
         <HeaderTemplate>
             <table class="table  table-striped table-hover">
                 <thead>
