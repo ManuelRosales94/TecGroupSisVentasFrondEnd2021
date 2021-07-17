@@ -10,7 +10,7 @@
                         <td style="width: 77px">Cliente :</td>
                         <td style="width: 397px; margin-bottom: 4px; margin-top: 4px">
                             <asp:TextBox ID="txtCliente" runat="server" Width="332px" CssClass="form-control"></asp:TextBox>
-                           
+                           --Lina
                         </td>
                         
                     </tr>
