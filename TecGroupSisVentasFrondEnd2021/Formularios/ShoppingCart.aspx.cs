@@ -58,7 +58,7 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
                 {
                     LabelTotalText.Text = "";
                     lblTotal.Text = "";
-                    ShoppingCartTitle.InnerText = "Shopping Cart is Empty";
+                    ShoppingCartTitle.InnerText = "Carrito vacio";
                     UpdateBtn.Visible = false;
                     // CheckoutImageBtn.Visible = false;
                 }
@@ -181,6 +181,19 @@ namespace TecGroupSisVentasFrondEnd2021.Formularios
 
                    
                 }
+
+                Correo c = new Correo();
+                c.idPedido =Convert.ToString(registroGenerado);
+                c.email = user.Correo ;
+                c.user = user.Nombre + " " + user.Apellidos;
+                c.subject = "Gracias por tu compra"+" " +user.Nombre;
+                c.cost = "S/" + " " + cartTotal;
+
+            var cliente = new RestClient("https://dsd-tecgroup-inleggo.codeanyapp.com");
+                var request = new RestRequest("/app/serv/correo_compra.php", Method.POST);
+                request.AddJsonBody(c);
+                var response = cliente.Execute(request);
+
                 Response.Redirect("/Formularios/ListaCompras.aspx");
             }
         }

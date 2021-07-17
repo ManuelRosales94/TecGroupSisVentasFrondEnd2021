@@ -238,6 +238,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Modelos\Correo.cs" />
     <Compile Include="Modelos\dbVentas.cs" />
     <Compile Include="Formularios\AddToCart.aspx.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>

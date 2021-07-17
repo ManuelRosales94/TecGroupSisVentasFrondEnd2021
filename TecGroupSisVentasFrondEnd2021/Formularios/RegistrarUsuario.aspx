@@ -50,11 +50,12 @@
 
           <div class="row">   
           <div class="col-4">
-    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="btnBuscar_Click" class="btn btn-success"/>
+    <asp:Button ID="Button1" runat="server" Text="Buscar Reniec" OnClick="btnBuscar_Click" class="btn btn-success"/>
+          
           </div>
 
         </div>
-
+          <br />
 
                     <div class="input-group mb-3">      
          <asp:TextBox ID="txtNombre" runat="server"   type="text" class="form-control" placeholder="Nombre Completo"
