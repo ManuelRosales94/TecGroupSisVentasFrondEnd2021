@@ -9,8 +9,12 @@ namespace TecGroupSisVentasFrondEnd2021.Logic
 {
     public class BDConexion
     {
-  
-        private string cadena = @"Data Source=.;Initial Catalog=BD_TEC_GROUP_VENTAS;Integrated Security=True";
+
+        //private string cadena = @"Data Source=.;                                                        Initial Catalog=BD_TEC_GROUP_VENTAS;Integrated Security=True";
+        //private string cadena = @"Data Source = dbtecgroup.c2jmxny0uixg.us - east - 2.rds.amazonaws.com; Initial Catalog = BD_TEC_GROUP_VENTAS; Integrated Security=True;User ID = admin; Password=dbtecgroup";
+        private string cadena = @"Data Source=dbtecgroup.c2jmxny0uixg.us-east-2.rds.amazonaws.com;Initial Catalog=BD_TEC_GROUP_VENTAS;Persist Security Info=True;User ID=admin;Password=dbtecgroup";
+
+
         private SqlConnection conexion;
 
         public SqlConnection conectarBD()
