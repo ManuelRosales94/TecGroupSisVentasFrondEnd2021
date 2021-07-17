@@ -35,16 +35,30 @@
       <form  id="form1" runat="server">
 
          <div class="input-group mb-3">      
-         <asp:TextBox ID="txtDNI" runat="server"   type="number" class="form-control" placeholder="DNI" required="" ></asp:TextBox>
+         <asp:TextBox ID="txtDNI" runat="server"   type="number" class="form-control" placeholder="DNI" required="" OnTextChanged="btnBuscar_Click" ></asp:TextBox>
+            
              <div class="input-group-append">
+              
             <div class="input-group-text">
               <span class="fas fa-user"></span>
             </div>
           </div>
         </div>
-          
-          <div class="input-group mb-3">      
-         <asp:TextBox ID="txtNombre" runat="server"   type="text" class="form-control" placeholder="Nombre Completo"  required="" ></asp:TextBox>
+
+       
+
+
+          <div class="row">   
+          <div class="col-4">
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="btnBuscar_Click" class="btn btn-success"/>
+          </div>
+
+        </div>
+
+
+                    <div class="input-group mb-3">      
+         <asp:TextBox ID="txtNombre" runat="server"   type="text" class="form-control" placeholder="Nombre Completo"
+             requerid=""   ValidationGroup="form_ejm"></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -53,7 +67,7 @@
         </div>
 
             <div class="input-group mb-3">      
-          <asp:TextBox ID="txtApellidos" runat="server" type="text" class="form-control" placeholder="Apellidos" required=""></asp:TextBox>
+          <asp:TextBox ID="txtApellidos" runat="server" type="text" class="form-control" placeholder="Apellidos" ></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -62,7 +76,7 @@
         </div>
 
               <div class="input-group mb-3">      
-           <asp:TextBox ID="txtCelular" runat="server" type="number" class="form-control" placeholder="Celular" required=""></asp:TextBox>
+           <asp:TextBox ID="txtCelular" runat="server" type="number" class="form-control" placeholder="Celular" ></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -71,7 +85,7 @@
         </div>
 
              <div class="input-group mb-3">      
-                 <asp:TextBox ID="txtDistrito" runat="server"  type="text" class="form-control" placeholder="Distrito" required=""></asp:TextBox>
+                 <asp:TextBox ID="txtDistrito" runat="server"  type="text" class="form-control" placeholder="Distrito" ></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -80,7 +94,7 @@
         </div>
 
              <div class="input-group mb-3">      
-                 <asp:TextBox ID="txtDireccion" runat="server" type="text" class="form-control" placeholder="Direccion" required=""></asp:TextBox>
+                 <asp:TextBox ID="txtDireccion" runat="server" type="text" class="form-control" placeholder="Direccion" ></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -89,7 +103,7 @@
         </div>
 
         <div class="input-group mb-3">
-         <asp:TextBox ID="txtCorreo" runat="server" type="email" class="form-control" placeholder="Correo" required=""></asp:TextBox>
+         <asp:TextBox ID="txtCorreo" runat="server" type="email" class="form-control" placeholder="Correo"></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -98,7 +112,7 @@
         </div>
 
         <div class="input-group mb-3">
-       <asp:TextBox ID="txtcontraseña" runat="server" type="password" class="form-control" placeholder="Contraseña" required=""></asp:TextBox>
+       <asp:TextBox ID="txtcontraseña" runat="server" type="password" class="form-control" placeholder="Contraseña" ></asp:TextBox>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -109,7 +123,8 @@
 
         <div class="row">   
           <div class="col-4">
-    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" class="btn btn-success"/>
+    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click"
+        class="btn btn-success"  ValidationGroup="form_ejm"        />
           </div>
 
         </div>
